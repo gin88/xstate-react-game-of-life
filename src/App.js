@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Board from './ui/Board'
+import Controller from './ui/Controller'
+import { GlobalStateProvider } from './GlobalStateProvider'
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <GlobalStateProvider>
+      <div className="container">
+        <div className="board">
+          <Board size={30} />
+        </div>
+        <Controller />
+      </div>
+    </GlobalStateProvider>
+  )
 }
 
-export default App;
+export default App
